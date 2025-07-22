@@ -70,6 +70,9 @@ categories = {
     ],
     "DATABASE SERVERS": [
         "10.24.38.78", "10.103.38.78"
+    ],
+"DATAMANAGEMENT SERVERS": [
+        "10.24.38.78", "10.103.38.78"
     ]
 }
 
