@@ -1,0 +1,25 @@
+name: Auto Create Pull Request
+
+on:
+  push:
+    branches:
+      - feature-branch  # trigger only when this branch is updated
+
+jobs:
+  create-pull-request:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v5
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        base: main  # target branch
+        branch: feature-branch  # source branch
+        title: "🔁 Auto PR: Update from feature-branch"
+        body: "This pull request was automatically created by GitHub Actions when files were updated in feature-branch."
+        commit-message: "🤖 Auto commit from workflow"
+        delete-branch: false
